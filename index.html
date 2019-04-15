@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- page name-->
+    <title>Components | Components</title>
+    <!-- Required meta tags-->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <!-- Optional styles-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&amp;amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet"/>
+    <link href="s/css/all.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <div class="l-wrapper">
+      <main>
+        <div class="container">
+          <div class="component-wrapper">
+            <div class="component-search-wrap">
+              <input type="text" placeholder="Type a component name" class="component-search">
+            </div>
+            <div class="component-block">
+              <p class="component-title">Bootstrap select</p>
+              <div class="component-inner hidden">
+                <div class="component-install">
+                  <p class="install-title">What to do:</p>
+                  <ol class="install-list">
+                    <li>bower install bootstrap-select --save</li>
+                    <li>connect in main.js /* plugins */
+                      <ul class="install-sublist">
+                        <li>//=include ../../dist/bower_components/bootstrap/js/dist/util.js</li>
+                        <li>//=include ../../dist/bower_components/popper.js/dist/umd/popper.min.js</li>
+                        <li>//=include ../../dist/bower_components/bootstrap/js/dist/dropdown.js</li>
+                        <li>//=include ../../dist/bower_components/bootstrap-select/dist/js/bootstrap-select.js</li>
+                      </ul>
+                    </li>
+                    <li>uncomment in scss/_includes/libs/bootstrap/bootstrap.scss:
+                      <ul class="install-sublist">
+                        <li>@import "../../../../../dist/bower_components/bootstrap/scss/dropdown";</li>
+                      </ul>
+                    </li>
+                    <li>jade: select(name="select").selectpicker</li>
+                    <li> <a href="https://codepen.io/combs93/pen/QPKpBQ" target="_blank">styles</a></li>
+                  </ol>
+                </div>
+                <div class="component-result">
+                  <select name="select" class="selectpicker">
+                    <option value="1">Mustard</option>
+                    <option value="1">Ketchup</option>
+                    <option value="1">Barbecue</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="component-block">
+              <p class="component-title">Bootstrap modal</p>
+              <div class="component-inner hidden">
+                <div class="component-install">
+                  <p class="install-title">What to do:</p>
+                  <ol class="install-list">
+                    <li>uncomment in bootstrap.scss 
+                      <ul class="install-sublist">
+                        <li>@import "../../../../../dist/bower_components/bootstrap/scss/transitions";</li>
+                      </ul>
+                    </li>
+                    <li>connect in main.js /* plugins */ 
+                      <ul class="install-sublist">
+                        <li>//=include ../../dist/bower_components/bootstrap/js/dist/util.js</li>
+                      </ul>
+                    </li>
+                    <li>Connect by Moff Loader helpers/bs_modal_fix.js and plugins/bs/modal.js in MAIN.js
+                      <ul class="install-sublist">
+                        <li> <a href="https://codepen.io/combs93/pen/oOwVog" target="_blank">script						</a></li>
+                      </ul>
+                    </li>
+                    <li>plugins/bs/modal.js comment all (body.add(remove)Class(Open))
+                      <ul class="install-sublist">
+                        <li>177 line</li>
+                        <li>363 line</li>
+                        <li>501 line (padding-right)</li>
+                        <li>524 line (padding-right)</li>
+                      </ul>
+                    </li>
+                    <li>Create c-modal component</li>
+                    <li>Connect c-modal in _extenda/main.jade in block beforeScripts after .l-wrapper</li>
+                    <li>modal jade
+                      <ul class="install-sublist">
+                        <li> <a href="https://codepen.io/combs93/pen/zXzVGJ">jade</a></li>
+                      </ul>
+                    </li>
+                    <li>btn/link trigger
+                      <ul class="install-sublist">
+                        <li><code>a(href="#my_modal", data-toggle="modal")</code></li>
+                      </ul>
+                    </li>
+                  </ol>
+                </div>
+                <div class="component-result"><a href="#my_modal" data-toggle="modal" class="resutlt-btn">modal trigger</a></div>
+              </div>
+            </div>
+            <div class="component-block">
+              <p class="component-title">Timer</p>
+              <div class="component-inner">
+                <div class="component-install">
+                  <p class="install-title">Simple tick timer</p>
+                  <ol class="install-list">
+                    <li>Create <code>button.tick-init Tick</code> to init a tick timer</li>
+                    <li><a href="https://codepen.io/combs93/pen/QPgeqo" target="_blank">js</a></li>
+                  </ol>
+                </div>
+                <div class="component-result"><span id="timer_count">0</span>
+                  <button class="resutlt-btn tick-init">Tick Init</button>
+                </div>
+                <div class="component-install">
+                  <p class="install-title">Timee pro</p>
+                  <ol class="install-list">
+                    <li> <a href="https://codepen.io/combs93/pen/QPgeqo" target="_blank">Jade and js </a></li>
+                  </ol>
+                </div>
+                <div class="component-result">
+                  <div id="contest_timer" class="contest-timer"><span class="timer-days"></span><span class="contest-timer-dots">:</span><span class="timer-hours"></span><span class="contest-timer-dots">:</span><span class="timer-minutes"></span><span class="contest-timer-dots">:</span><span class="timer-seconds"></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <div tabindex="-1" role="dialog" aria-hidden="true" id="my_modal" class="fade modal js-modal">
+      <div role="document" class="modal-dialog modal-dialog-centered">
+        <div class="container">
+          <div class="modal-content">
+            <p>My Modal Window</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="s/js/main.js"></script>
+  </body>
+</html>
